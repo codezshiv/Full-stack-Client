@@ -13,11 +13,11 @@ const ProfilePage = () => {
     const [listOfPosts, setListOfPosts] = useState([])
 
     useEffect(() => {
-        Axios.get(`http://full-stack-server-1-xwls.onrender.com/auth/basicinfo/${id}`).then((response) => {
+        Axios.get(`https://full-stack-server-1-xwls.onrender.com/auth/basicinfo/${id}`).then((response) => {
             setUsername(response.data.username)
         });
 
-        Axios.get(`http://full-stack-server-1-xwls.onrender.com/posts/byuserId/${id}`).then((response) => {
+        Axios.get(`https://full-stack-server-1-xwls.onrender.com/posts/byuserId/${id}`).then((response) => {
             setListOfPosts(response.data);
         })
 

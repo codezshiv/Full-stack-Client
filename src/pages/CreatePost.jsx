@@ -29,7 +29,7 @@ const CreatePost = () => {
     })
 
     const onSubmit = (data) => {
-        Axios.post("http://full-stack-server-1-xwls.onrender.com/posts", data, {
+        Axios.post("https://full-stack-server-1-xwls.onrender.com/posts", data, {
           headers: {
             accessToken: localStorage.getItem("accessToken")
           }

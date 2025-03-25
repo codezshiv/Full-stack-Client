@@ -16,7 +16,7 @@ const App = () => {
   const [authState, setAuthState] = useState({username: "", id: 0, status: false})
 
   useEffect(() => {
-    Axios.get("http://full-stack-server-1-xwls.onrender.com/auth/auth", {
+    Axios.get("https://full-stack-server-1-xwls.onrender.com/auth/auth", {
       headers:{
         accessToken: localStorage.getItem("accessToken")
       }

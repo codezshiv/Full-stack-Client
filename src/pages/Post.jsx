@@ -17,17 +17,17 @@ const Post = () => {
     const [newComment, setNewComment] = useState('')
 
     useEffect(() => {
-        Axios.get(`http://full-stack-server-1-xwls.onrender.com/byId/${id}`).then((response) => {
+        Axios.get(`https://full-stack-server-1-xwls.onrender.com/byId/${id}`).then((response) => {
             setPostObject(response.data)
         });
 
-        Axios.get(`http://full-stack-server-1-xwls.onrender.com/comments/${id}`).then((response) => {
+        Axios.get(`https://full-stack-server-1-xwls.onrender.com/comments/${id}`).then((response) => {
             setComments(response.data)
         });
     }, [])
 
     const addComment = () => {
-        Axios.post('http://full-stack-server-1-xwls.onrender.com/comments', {
+        Axios.post('https://full-stack-server-1-xwls.onrender.com/comments', {
             commentBody: newComment,
             PostId: id},
             {
@@ -48,7 +48,7 @@ const Post = () => {
     }
 
     const deleteComment = (id) => {
-        Axios.delete(`http://full-stack-server-1-xwls.onrender.com/comments/${id}`,{
+        Axios.delete(`https://full-stack-server-1-xwls.onrender.com/comments/${id}`,{
             headers: {
                 accessToken: localStorage.getItem("accessToken")
             }
@@ -60,7 +60,7 @@ const Post = () => {
     }
 
     const deletePost = (id) => {
-        Axios.delete(`http://full-stack-server-1-xwls.onrender.com/posts/${id}`, {
+        Axios.delete(`https://full-stack-server-1-xwls.onrender.com/posts/${id}`, {
             headers: {
                 accessToken: localStorage.getItem("accessToken")
             }
@@ -72,7 +72,7 @@ const Post = () => {
     const editPost = (option) => {
         if(option === 'title'){
             let newTitle = prompt('Enter new title: ')
-            Axios.put("http://full-stack-server-1-xwls.onrender.com/posts/title", {newTitle: newTitle, id: id}, {
+            Axios.put("https://full-stack-server-1-xwls.onrender.com/posts/title", {newTitle: newTitle, id: id}, {
                 headers: {
                     accessToken : localStorage.getItem("accessToken")
                 }
@@ -80,7 +80,7 @@ const Post = () => {
             setPostObject({...postObject, title: newTitle})
         } else {
             let newPostText = prompt('Enter new postText: ')
-            Axios.put("http://full-stack-server-1-xwls.onrender.com/posts/postText", {newPostText: newPostText, id: id}, {
+            Axios.put("https://full-stack-server-1-xwls.onrender.com/posts/postText", {newPostText: newPostText, id: id}, {
                 headers: {
                     accessToken : localStorage.getItem("accessToken")
                 }
