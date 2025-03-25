@@ -19,7 +19,7 @@ const Home = () => {
     if(!localStorage.getItem("accessToken")) {
       navigate("/login")
     } else {
-      Axios.get("http://localhost:3001/posts", {
+      Axios.get("http://full-stack-server-1-xwls.onrender.com/posts", {
         headers: { accessToken: localStorage.getItem("accessToken") }
       }).then((response) => {
         setListOfPosts(response.data.listOfPosts)
@@ -31,7 +31,7 @@ const Home = () => {
   }, [])
 
   const likeAPost = (postId) => {
-    Axios.post("http://localhost:3001/likes", {PostId : postId}, {
+    Axios.post("http://full-stack-server-1-xwls.onrender.com/likes", {PostId : postId}, {
       headers:{
         accessToken: localStorage.getItem("accessToken")
       }

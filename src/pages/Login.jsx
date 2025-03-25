@@ -13,7 +13,7 @@ const Login = () => {
 
     const login = () => {
         const data = {username: username, password:password}
-        Axios.post("http://localhost:3001/auth/login", data).then((response) => {
+        Axios.post("http://full-stack-server-1-xwls.onrender.com/auth/login", data).then((response) => {
             if(response.data.error) {
               alert(response.data.error)
             } else {

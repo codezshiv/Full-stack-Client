@@ -18,7 +18,7 @@ function Registrations() {
     })
 
     const onSubmit = (data) => {
-        Axios.post("http://localhost:3001/auth/", data).then(() => {
+        Axios.post("http://full-stack-server-1-xwls.onrender.com/auth/", data).then(() => {
             console.log(data)
         })
     }
